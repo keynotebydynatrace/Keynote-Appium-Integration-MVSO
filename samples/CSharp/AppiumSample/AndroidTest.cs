@@ -161,31 +161,31 @@ namespace AppiumSample
                 Assert.Fail("Android driver not Initialized");
         }
 
-        [Test]
-        public void C_Ok()
-        {
-            if (driver != null)
-            {
-                Thread.Sleep(2000);
-                performTouch(driver.FindElement(By.Name("OK")));
-                Assert.Pass("Passed");
-            }
-            else
-                Assert.Fail("Android driver not Initialized");
-        }
+        //[Test]
+        //public void C_Ok()
+        //{
+        //    if (driver != null)
+        //    {
+        //        Thread.Sleep(2000);
+        //        performTouch(driver.FindElement(By.Name("OK")));
+        //        Assert.Pass("Passed");
+        //    }
+        //    else
+        //        Assert.Fail("Android driver not Initialized");
+        //}
 
-        [Test]
-        public void D_Fail()
-        {
-            if (driver != null)
-            {
-                Thread.Sleep(2000);
-                performTouch(driver.FindElement(By.Name("New Report")));
-                Assert.Pass("Passed");
-            }
-            else
-                Assert.Fail("Android driver not Initialized");
-        }
+        //[Test]
+        //public void D_Fail()
+        //{
+        //    if (driver != null)
+        //    {
+        //        Thread.Sleep(2000);
+        //        performTouch(driver.FindElement(By.Name("New Report")));
+        //        Assert.Pass("Passed");
+        //    }
+        //    else
+        //        Assert.Fail("Android driver not Initialized");
+        //}
 
 
         //[Test]
