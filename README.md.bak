@@ -1,16 +1,25 @@
-## Mobile Testing
+# Keynote Mobile Testing
+## Keynote by Dynatrace
 
-Ensure the quality of your mobile apps and sites by testing on real devices over live carrier networks. Powered by the DeviceAnywhere Cloud, Keynote Mobile Testing streamlines your testing process and helps you deliver high-quality mobile experiences that delight and amaze your customers.
+Keynote Mobile Testing extension enables you to execute automated tests on real mobile devices in the cloud. As part of your continuous integration process, with Keynote, it's never been easier to perform both automated and manual testing with on-demand access to the most popular mobile devices.
 
-* [Get Started Now](http://www.keynote.com/solutions/testing/mobile-testing#pricing)
+## Capabilities
 
-![screenshot](images/touchscreen-control.jpg)
+* Easy access to real smartphones and tablets in the cloud
+* Full remote control over cloud devices using patented Direct-to-Device technology
+* Automatic delivery of builds to the device(s) of your choice
+* Building and scheduling of automated regression suites directly from Microsoft Visual Studio Online
+* Execution of Appium test cases
 
-## Touchscreen control
+## Requirements
 
-To be a mobile website tester, all you need is a keyboard and a mouse and you can take advantage of all of the capabilities of real mobile devices. Click on links and swipe through pages just as if the device were in your hands.
+* Keynote Mobile Testing account
+* Appium test scripts
 
 
-![screenshot](images/device-coverage.jpg)
+## [Get started with a free trial](http://www.keynote.com/solutions/testing/microsoft-visual-studio-team-foundation-server-integration)
+
+![screenshot](images/screenshot1.jpg)
+
 
 
