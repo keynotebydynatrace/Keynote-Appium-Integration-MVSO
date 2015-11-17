@@ -11,19 +11,16 @@ Keynote Mobile Testing extension enables you to execute automated tests on real 
 * Building and scheduling of automated regression suites directly from Microsoft Visual Studio Online
 * Execution of Appium test cases
 
-## Requirements
+## Getting Started
 
-* Keynote Mobile Testing account
-* Appium test scripts
+* Keynote Mobile Testing account - [Get a new account now](http://www.keynote.com/solutions/testing/microsoft-visual-studio-team-foundation-server-integration)
+* Help -  [How to get started](http://www.keynote.com/support/MobileTesting_help/MicrosoftVSO_Help.html)
 
 
-## [Get started with a free trial](http://www.keynote.com/solutions/testing/microsoft-visual-studio-team-foundation-server-integration)
-
-## [Help](http://www0.keynote.com/support/MobileTesting_help/MicrosoftVSO_Help.html)
-
-![screenshot](images/screenshot1.jpg)
 
 ![screenshot](images/screenshot2.png)
+
+![screenshot](images/screenshot1.jpg)
 
 
 
