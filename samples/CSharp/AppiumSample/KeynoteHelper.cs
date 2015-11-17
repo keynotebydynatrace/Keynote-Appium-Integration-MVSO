@@ -31,7 +31,7 @@ namespace AppiumSample
             keynoteConfig.Password = Environment.GetEnvironmentVariable("KEYNOTE_PASSWORD");//, EnvironmentVariableTarget.Machine);
 
             System.Console.WriteLine("KEYNOTE_APPIUM_HUB_URL -->" + Environment.GetEnvironmentVariable("KEYNOTE_APPIUM_HUB_URL"));
-            System.Console.WriteLine("KEYNOTE_USER_NAME -->" + Environment.GetEnvironmentVariable("KEYNOTE_USER_NAME"));
+            System.Console.WriteLine("KEYNOTE_USERNAME -->" + Environment.GetEnvironmentVariable("KEYNOTE_USERNAME"));
             System.Console.WriteLine("KEYNOTE_PASSWORD -->" + Environment.GetEnvironmentVariable("KEYNOTE_PASSWORD"));
 
             System.Console.WriteLine("Initializing keynote API");
