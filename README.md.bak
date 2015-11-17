@@ -19,6 +19,8 @@ Keynote Mobile Testing extension enables you to execute automated tests on real 
 
 ## [Get started with a free trial](http://www.keynote.com/solutions/testing/microsoft-visual-studio-team-foundation-server-integration)
 
+## [Help](http://www0.keynote.com/support/MobileTesting_help/MicrosoftVSO_Help.html)
+
 ![screenshot](images/screenshot1.jpg)
 
 
