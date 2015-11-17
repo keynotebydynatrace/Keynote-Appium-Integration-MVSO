@@ -18,7 +18,7 @@ Keynote Mobile Testing extension enables you to execute automated tests on real 
 
 
 
-![screenshot](images/screenshot2.png)
+![screenshot](images/screenshot3.png)
 
 ![screenshot](images/screenshot1.jpg)
 
