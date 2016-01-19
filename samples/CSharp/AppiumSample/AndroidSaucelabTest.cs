@@ -18,7 +18,7 @@ namespace AppiumSample
     [TestFixture()]
     public class AndroidSaucelabTest
     {
-        private AndroidDriver<AndroidElement> driver;
+        private RemoteWebDriver driver;
         private bool allPassed = true;
 
         [TestFixtureSetUp]
@@ -40,8 +40,8 @@ namespace AppiumSample
             //set the desired capabilities
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.SetCapability(CapabilityType.BrowserName, "");
-            capabilities.SetCapability(MobileCapabilityType.AppiumVersion, "1.4.0.0");
-            capabilities.SetCapability(MobileCapabilityType.PlatformVersion, "5.0.1");
+            //capabilities.SetCapability(MobileCapabilityType.AppiumVersion, "1.4.0.0");
+            capabilities.SetCapability(MobileCapabilityType.PlatformVersion, "4.4");
             capabilities.SetCapability(MobileCapabilityType.PlatformName, "Android");
             capabilities.SetCapability(MobileCapabilityType.DeviceName, "Google Nexus 7 HD Emulator");
 
@@ -54,7 +54,7 @@ namespace AppiumSample
             //Please don not acquire device from website during complete automation mode, because script will acquire the device
             capabilities.SetCapability(MobileCapabilityType.App, appURL);
 
-            Uri serverUri = new Uri("http://ondemand.saucelabs.com/wd/hub");
+            Uri serverUri = new Uri("http://moorthisarav:946de7cf-599c-4d3f-8316-2fe5c5da14cf@ondemand.saucelabs.com/wd/hub");
 
             //User following code for complete automation (acquire device and get appium Uri)
             //serverUri = KeynoteHelper.GetAppiumUrl(9337);
@@ -71,8 +71,18 @@ namespace AppiumSample
 
             if (serverUri != null)
             {
-                driver = new AndroidDriver<AndroidElement>(serverUri, capabilities, Env.INIT_TIMEOUT_SEC);
-                driver.Manage().Timeouts().ImplicitlyWait(Env.IMPLICIT_TIMEOUT_SEC);
+                try
+                {
+
+
+                    //driver = new AndroidDriver<AndroidElement>(serverUri, capabilities, Env.INIT_TIMEOUT_SEC);
+                    driver = new RemoteWebDriver(serverUri, capabilities, Env.INIT_TIMEOUT_SEC);
+                    driver.Manage().Timeouts().ImplicitlyWait(Env.IMPLICIT_TIMEOUT_SEC);
+                }
+                catch (Exception e)
+                {
+                    System.Console.WriteLine(e.Message);
+                }
             }
         }
 
@@ -95,23 +105,23 @@ namespace AppiumSample
             allPassed = allPassed && (TestContext.CurrentContext.Result.State == TestState.Success);
         }
 
-        private void performTouch(AndroidElement element)
-        {
-            if (element != null)
-            {
-                TouchAction a1 = new TouchAction(driver);
-                a1
-                  .Press(element, 100, 100)
-                  .Wait(1000)
-                  .Release();
-                a1.Perform();
-            }
-        }
+        //private void performTouch(AndroidElement element)
+        //{
+        //    if (element != null)
+        //    {
+        //        TouchAction a1 = new TouchAction(driver);
+        //        a1
+        //          .Press(element, 100, 100)
+        //          .Wait(1000)
+        //          .Release();
+        //        a1.Perform();
+        //    }
+        //}
 
-        public void ButtonTouch(String text)
-        {
-            performTouch(driver.FindElementByName(text));
-        }
+        //public void ButtonTouch(String text)
+        //{
+        //    performTouch(driver.FindElementByName(text));
+        //}
 
         [Test]
         public void A_ButtonTouch()
@@ -119,7 +129,8 @@ namespace AppiumSample
             if (driver != null)
             {
                 Thread.Sleep(2000);
-                ButtonTouch("Add New Expense");
+                //ButtonTouch("Add New Expense");
+                driver.FindElementByName("Add New Expense").Click();
                 Assert.Pass("Passed");
             }
             else
