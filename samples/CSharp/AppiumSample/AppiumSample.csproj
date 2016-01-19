@@ -103,6 +103,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="AndroidSaucelabTest.cs" />
     <Compile Include="helpers\Actions.cs" />
     <Compile Include="helpers\AppiumServers.cs" />
     <Compile Include="helpers\Env.cs" />
