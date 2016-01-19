@@ -40,7 +40,7 @@ namespace AppiumSample
             //set the desired capabilities
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.SetCapability(CapabilityType.BrowserName, "");
-            capabilities.SetCapability(MobileCapabilityType.AppiumVersion, "1.0");
+            capabilities.SetCapability(MobileCapabilityType.AppiumVersion, "1.4.0.0");
             capabilities.SetCapability(MobileCapabilityType.PlatformVersion, "5.0.1");
             capabilities.SetCapability(MobileCapabilityType.PlatformName, "Android");
             capabilities.SetCapability(MobileCapabilityType.DeviceName, "Google Nexus 7 HD Emulator");
