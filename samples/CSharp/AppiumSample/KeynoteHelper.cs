@@ -59,10 +59,12 @@ namespace AppiumSample
   
                 if (!string.IsNullOrEmpty(sessionId))
                 {
-                    if (LockDevice(sessionId, mcd))
-                    {
-                        appiumURL = StartAppium(sessionId, mcd);
-                    }
+                    LockDeviceResponse ensemble = LockDevice(sessionId, mcd);
+
+
+                    if (ensemble != null)
+                        appiumURL = StartAppium(ensemble.EnsembleServerURL, ensemble.SessionId, mcd);
+                    
                 }
 
                 if (!string.IsNullOrEmpty(appiumURL))
@@ -119,7 +121,7 @@ namespace AppiumSample
         /// <param name="sessionId">user session id</param>
         /// <param name="mcd">Device uniq id</param>
         /// <returns>lock result</returns>
-        private static bool LockDevice(string sessionId, int mcd)
+        private static LockDeviceResponse LockDevice(string sessionId, int mcd)
         {
             System.Console.WriteLine("Lock device...");
             
@@ -133,10 +135,14 @@ namespace AppiumSample
             {
                 var resultJson = JsonConvert.DeserializeObject<LockDeviceResponse>(result);
                 System.Console.WriteLine("Lock device successfully...");
-                return resultJson.Success;
+
+                if (resultJson.Success)
+                    return resultJson;
+                else
+                    return null;
             }
 
-            return false;
+            return null;
 
         }
 
@@ -146,7 +152,7 @@ namespace AppiumSample
         /// <param name="sessionId">User valid session</param>
         /// <param name="mcd">Device uniq id</param>
         /// <returns>Appium url to apply in client appium script for automation</returns>
-        private static string StartAppium(string sessionId, int mcd)
+        private static string StartAppium(string ensembleUrl, string sessionId, int mcd)
         {
             var requestJson = new SessionInfo();
             requestJson.SessionId = sessionId;
@@ -154,14 +160,17 @@ namespace AppiumSample
             System.Console.WriteLine("Starting Appium...");
 
             RESTClient client = new RESTClient();
-            string result = client.Get(keynoteConfig.AccessServerUrl + "device/" + sessionId + "/start-appium/" + mcd);
+            //string result = client.Get(keynoteConfig.AccessServerUrl + "device/" + sessionId + "/start-appium/" + mcd);
+
+            string result = client.Get(ensembleUrl + "/start-appium");
       
             if (result != null)
             {
-                System.Console.WriteLine("Started Appium session --> " + result);
-                
-                return result;
+                System.Console.WriteLine("Started Appium session --> " + sessionId);
+
+                return "https://dademo112.deviceanywhere.com/appium/" + sessionId + "/wd/hub/";
             }
+
             return null;
 
         }
@@ -305,6 +314,15 @@ namespace AppiumSample
         {
             get { return ensembleServerURL; }
             set { ensembleServerURL = value; }
+        }
+
+        string sessionId;
+
+        [JsonProperty("sessionId")]
+        public string SessionId
+        {
+            get { return sessionId; }
+            set { sessionId = value; }
         }
     }
 
