@@ -31,18 +31,18 @@ namespace AppiumSample
             //string appURL = KeynoteHelper.GetApplicationURL("Remainder", "1.1", @"C:\Users\ssubram1\Desktop\Microsoft\app\com.expensemanager.apk"); //
 
 
-            System.Console.WriteLine("APPIUM_DEVICE_LIST -->" + Environment.GetEnvironmentVariable("APPIUM_DEVICE_LIST"));
+            System.Console.WriteLine("APPIUM_DEVICE_LIST -->" + Environment.GetEnvironmentVariable("APPIUM_DEVICE_LIST", EnvironmentVariableTarget.Process));
 
 
-            string appURL = Environment.GetEnvironmentVariable("APPIUM_APP_URL");//, EnvironmentVariableTarget.Machine);
+            string appURL = Environment.GetEnvironmentVariable("APPIUM_APP_URL", EnvironmentVariableTarget.Process);//, EnvironmentVariableTarget.Machine);
 
             if (string.IsNullOrEmpty(appURL))
             {
-                System.Console.WriteLine("APPIUM_APP_PATH -->" + Environment.GetEnvironmentVariable("APPIUM_APP_PATH"));
-                appURL = KeynoteHelper.GetApplicationURL("Remainder", "1.1", Environment.GetEnvironmentVariable("APPIUM_APP_PATH"));//, EnvironmentVariableTarget.Machine));
+                System.Console.WriteLine("APPIUM_APP_PATH -->" + Environment.GetEnvironmentVariable("APPIUM_APP_PATH", EnvironmentVariableTarget.Process));
+                appURL = KeynoteHelper.GetApplicationURL("Remainder", "1.1", Environment.GetEnvironmentVariable("APPIUM_APP_PATH", EnvironmentVariableTarget.Process));//, EnvironmentVariableTarget.Machine));
             }
             else
-                System.Console.WriteLine("APPIUM_APP_URL -->" + Environment.GetEnvironmentVariable("APPIUM_APP_URL"));
+                System.Console.WriteLine("APPIUM_APP_URL -->" + Environment.GetEnvironmentVariable("APPIUM_APP_URL", EnvironmentVariableTarget.Process));
 
             //set the desired capabilities
             DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -59,7 +59,7 @@ namespace AppiumSample
 
             Uri serverUri = null;
 
-            string devices = Environment.GetEnvironmentVariable("APPIUM_DEVICE_LIST");//, EnvironmentVariableTarget.Machine);
+            string devices = Environment.GetEnvironmentVariable("APPIUM_DEVICE_LIST", EnvironmentVariableTarget.Process);//, EnvironmentVariableTarget.Machine);
             List<int> deviceList = new List<int>();
 
             if (!string.IsNullOrEmpty(devices))

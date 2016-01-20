@@ -26,9 +26,9 @@ namespace AppiumSample
                     // }
 
             keynoteConfig = new KeynoteConfig();
-            keynoteConfig.AccessServerUrl = Environment.GetEnvironmentVariable("KEYNOTE_APPIUM_HUB_URL");//, EnvironmentVariableTarget.Machine);
-            keynoteConfig.Email = Environment.GetEnvironmentVariable("KEYNOTE_USER_NAME");//, EnvironmentVariableTarget.Machine);
-            keynoteConfig.Password = Environment.GetEnvironmentVariable("KEYNOTE_PASSWORD");//, EnvironmentVariableTarget.Machine);
+            keynoteConfig.AccessServerUrl = Environment.GetEnvironmentVariable("KEYNOTE_APPIUM_HUB_URL", EnvironmentVariableTarget.Process);
+            keynoteConfig.Email = Environment.GetEnvironmentVariable("KEYNOTE_USER_NAME", EnvironmentVariableTarget.Process);//, EnvironmentVariableTarget.Machine);
+            keynoteConfig.Password = Environment.GetEnvironmentVariable("KEYNOTE_PASSWORD", EnvironmentVariableTarget.Process);//, EnvironmentVariableTarget.Machine);
 
             System.Console.WriteLine("KEYNOTE_APPIUM_HUB_URL -->" + Environment.GetEnvironmentVariable("KEYNOTE_APPIUM_HUB_URL"));
             System.Console.WriteLine("KEYNOTE_USER_NAME -->" + Environment.GetEnvironmentVariable("KEYNOTE_USER_NAME"));
