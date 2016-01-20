@@ -25,10 +25,14 @@ namespace AppiumSample
                     //     keynoteConfig = JsonConvert.DeserializeObject<KeynoteConfig>(configdata);
                     // }
 
+            Environment.SetEnvironmentVariable("KEYNOTE_APPIUM_HUB_URL", "http://tcaccess21qasm.keynote.com:6232/resource/");
+            Environment.SetEnvironmentVariable("KEYNOTE_USER_NAME", "mohini123@mc.com");
+            Environment.SetEnvironmentVariable("KEYNOTE_PASSWORD", "Harmony1");
+
             keynoteConfig = new KeynoteConfig();
-            keynoteConfig.AccessServerUrl = Environment.GetEnvironmentVariable("KEYNOTE_APPIUM_HUB_URL", EnvironmentVariableTarget.Process);
-            keynoteConfig.Email = Environment.GetEnvironmentVariable("KEYNOTE_USER_NAME", EnvironmentVariableTarget.Process);//, EnvironmentVariableTarget.Machine);
-            keynoteConfig.Password = Environment.GetEnvironmentVariable("KEYNOTE_PASSWORD", EnvironmentVariableTarget.Process);//, EnvironmentVariableTarget.Machine);
+            keynoteConfig.AccessServerUrl = Environment.GetEnvironmentVariable("KEYNOTE_APPIUM_HUB_URL");//, EnvironmentVariableTarget.Machine);
+            keynoteConfig.Email = Environment.GetEnvironmentVariable("KEYNOTE_USER_NAME");//, EnvironmentVariableTarget.Machine);
+            keynoteConfig.Password = Environment.GetEnvironmentVariable("KEYNOTE_PASSWORD");//, EnvironmentVariableTarget.Machine);
 
             System.Console.WriteLine("KEYNOTE_APPIUM_HUB_URL -->" + Environment.GetEnvironmentVariable("KEYNOTE_APPIUM_HUB_URL"));
             System.Console.WriteLine("KEYNOTE_USER_NAME -->" + Environment.GetEnvironmentVariable("KEYNOTE_USER_NAME"));
