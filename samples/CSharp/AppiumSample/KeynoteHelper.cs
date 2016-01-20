@@ -25,7 +25,7 @@ namespace AppiumSample
                     //     keynoteConfig = JsonConvert.DeserializeObject<KeynoteConfig>(configdata);
                     // }
 
-            Environment.SetEnvironmentVariable("KEYNOTE_APPIUM_HUB_URL", "https://dademo111.deviceanywhere.com:6232/resource/");
+            Environment.SetEnvironmentVariable("KEYNOTE_APPIUM_HUB_URL", "http://dademo111.deviceanywhere.com:6232/resource/");
             Environment.SetEnvironmentVariable("KEYNOTE_USER_NAME", "mohini123@mc.com");
             Environment.SetEnvironmentVariable("KEYNOTE_PASSWORD", "Harmony1");
 
